@@ -23,7 +23,7 @@
       <%= form.label_and_textarea "text_5", {:label_opts => { :contextual => controller_name.singularize } }  %>
       <%= form.label_and_select "enum_1", form.possible_options_for("enum_1", true), {:label_opts => { :contextual => controller_name.singularize } }   %>
       <%= form.label_and_select "enum_2", form.possible_options_for("enum_2", true) , {:label_opts => { :contextual => controller_name.singularize } } %>
-      <%= form.label_and_select "enum_3", form.possible_options_for("enum_3", true) , {:label_opts => { :contextual => controller_name.singularize } } %>
-      <%= form.label_and_select "enum_4", form.possible_options_for("enum_4", true) , {:label_opts => { :contextual => controller_name.singularize } } %>
+      <%-# form.label_and_select "enum_3", form.possible_options_for("enum_3", true) , {:label_opts => { :contextual => controller_name.singularize } } -%>
+      <%-# form.label_and_select "enum_4", form.possible_options_for("enum_4", true) , {:label_opts => { :contextual => controller_name.singularize } } -%>
    </div>
 <% end %>
