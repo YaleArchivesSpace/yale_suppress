@@ -27,5 +27,4 @@ enum_3
 eum_4
 
 RESOURCES
-resource_type
 restrictions
