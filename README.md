@@ -1,7 +1,7 @@
 # yale_suppress
 Local plugin that suppresses fields from the staff interface that are not used at Yale.
 
-The following records and subrecords have the listed fields suppressed from view:
+The following records and subrecords have the listed fields suppressed from view in the view and edit modes for the relevant record types:
 
 ACCESSIONS
 resource_type
