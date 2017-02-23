@@ -16,7 +16,7 @@ calendar
 
 ###LINKED AGENTS  
 
-title [For Linked Agents with Role = Creator]
+title [For Linked Agents with Role = Creator - Only suppressed in edit mode]
 
 ###USER DEFINED  
 
