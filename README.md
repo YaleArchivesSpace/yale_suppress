@@ -30,5 +30,10 @@ date_3
 enum_3  
 eum_4  
 
-RESOURCES  
+###RESOURCES  
+
 restrictions
+
+####ARCHIVAL OBJECTS
+
+restrictions_apply
