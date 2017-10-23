@@ -4,22 +4,22 @@ Collection Management subrecords in the read-only view of accession records, exp
 
 The following records and subrecords have the listed fields suppressed in the view and edit modes for the relevant record types:
 
-###ACCESSIONS  
+### ACCESSIONS  
 
 resource_type   
 restrictions_apply
 
-###DATES  
+### DATES  
 
 certainty  
 era  
 calendar  
 
-###LINKED AGENTS  
+### LINKED AGENTS  
 
 title [For Linked Agents with Role = Creator - Only suppressed in edit mode]
 
-###USER DEFINED  
+### USER DEFINED  
 
 boolean_3 [Suppressed in edit mode only - will still appear in view mode]  
 integer_1  
@@ -31,10 +31,10 @@ date_3
 enum_3  
 eum_4  
 
-###RESOURCES  
+### RESOURCES  
 
 restrictions
 
-###ARCHIVAL OBJECTS
+### ARCHIVAL OBJECTS
 
 restrictions_apply

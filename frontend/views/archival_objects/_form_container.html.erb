@@ -1,7 +1,11 @@
 <%= link_to_help :topic => "archival_object" %>
 
 <h2>
-  <%= @archival_object.display_string.blank? ? I18n.t("archival_object._singular") : @archival_object.display_string %>
+  <% if @archival_object.display_string.blank? %>
+    <%= I18n.t("archival_object._singular") %>
+  <% else %>
+    <%= clean_mixed_content(@archival_object.display_string) %>
+  <% end %>
   <span class="label label-info"><%= I18n.t("archival_object._singular") %></span>
 </h2>
 
@@ -10,8 +14,9 @@
 
   <%= form.hidden_input "parent", nil, {"data-base-name" => "archival_object[parent]", "class" => "hidden-parent-uri"} %>
   <%= form.hidden_input "resource" %>
-  <%= form.hidden_input "position" %>
+
   <%= hidden_field_tag "id", @archival_object.id %>
+  <%= hidden_field_tag "uri", @archival_object.uri %>
 
   <% define_template("archival_object", jsonmodel_definition(:archival_object)) do |form| %>
     <section id="basic_information">
@@ -34,22 +39,22 @@
         <%= form.label_and_textfield "other_level", :required => true %>
         <%= form.label_and_select "language", form.possible_options_for("language", true) %>
         <div class="form-group">
-          <%= form.label "publish" %>
-          <div class="controls">
+          <%= form.label "publish", :class => 'control-label col-sm-2' %>
+          <div class="checkbox col-sm-9">
             <%= form.checkbox "publish", {}, user_prefs["publish"] %>
             <% if form.obj["has_unpublished_ancestor"] %>
               <span class="help-inline"><span class="text-info"><%= I18n.t("archival_object._frontend.messages.has_unpublished_ancestor") %></span></span>
             <% end %>
           </div>
         </div>
-        <%-# form.label_and_boolean "restrictions_apply", {}, form.default_for("restrictions_apply") -%>
+        <%#= form.label_and_boolean "restrictions_apply", {}, form.default_for("restrictions_apply") %>
         <%= form.label_and_textarea "repository_processing_note" %>
       </fieldset>
     </section>
   <% end %>
 
   <% form.emit_template("archival_object") %>
-  
+
   <%= render_aspace_partial :partial => "shared/subrecord_form", :locals => {:form => form, :name => "dates", :required => :conditionally, :template => "archival_record_date"} %>
   <%= render_aspace_partial :partial => "shared/subrecord_form", :locals => {:form => form, :name => "extents"} %>
 
